@@ -30,7 +30,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/"
+        "https://play.games.dmm.com/game/kancolle"
       ],
       "js": [
         "dest/js/dmm.js"
@@ -38,7 +38,7 @@
     },
     {
       "matches": [
-        "http://*/kcs2/index.php?*"
+        "https://*/kcs2/index.php?*"
       ],
       "all_frames": true,
       "js": [

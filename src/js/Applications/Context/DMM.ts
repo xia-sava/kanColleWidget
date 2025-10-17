@@ -5,7 +5,7 @@ import InAppButtons from "./Features/InAppButtons";
 import { resizeToAdjustAero } from "../../Services/Window";
 
 /**
- * http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/
+ * https://play.games.dmm.com/game/kancolle
  * において実行されるアプリケーションの実装です。
  */
 export default class DMM {
@@ -60,8 +60,8 @@ export default class DMM {
   private async shiftFrame(zoom: number) {
 
     // FIXME: iframe内のロードが終わる前に動かすと真っ白になる？
-    // const sleep = (sec: number) => new Promise(resolve => setTimeout(() => resolve(), sec * 1000));
-    // await sleep(4);
+    const sleep = (sec: number) => new Promise(resolve => setTimeout(() => resolve(), sec * 1000));
+    await sleep(1);
 
     const iframe = this.scope.document.querySelector(Const.GameIFrame) as HTMLIFrameElement;
     iframe.style.position = "absolute";
@@ -81,7 +81,7 @@ export default class DMM {
     wrapper.style.justifyContent = "center";
     wrapper.style.zIndex = "1";
     // 動的なものはこれだけなので、これ以外はinjectに持っていってもいいかもしれない
-    wrapper.style.paddingTop = `${54 * zoom}px`;
+    wrapper.style.paddingTop = `${140 * zoom}px`;
   }
 
   private injectStyles() {

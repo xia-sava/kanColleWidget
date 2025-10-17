@@ -1,7 +1,7 @@
 
-const KanColleURL = "http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/";
+const KanColleURL = "https://play.games.dmm.com/game/kancolle";
 
-const GameWrapper = "div#area-game";
+const GameWrapper = "main:has(iframe#game_frame)";
 const GameIFrame = "iframe#game_frame";
 const GameWidth = 1200;
 const GameHeight = 720;
