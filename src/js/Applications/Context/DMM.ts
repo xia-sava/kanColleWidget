@@ -65,8 +65,10 @@ export default class DMM {
 
     const iframe = this.scope.document.querySelector(Const.GameIFrame) as HTMLIFrameElement;
     iframe.style.position = "absolute";
+    iframe.style.top = "0";
     iframe.style.transition = "transform 0.2s";
     iframe.style.zIndex = "2";
+    iframe.style.transformOrigin = "top center";
     iframe.style.transform = `scale(${zoom})`;
 
     // コンテンツを中央に寄せる
@@ -77,11 +79,10 @@ export default class DMM {
     wrapper.style.top = "0";
     wrapper.style.left = "0";
     wrapper.style.display = "flex";
-    wrapper.style.alignItems = "center";
+    wrapper.style.alignItems = "flex-start";
     wrapper.style.justifyContent = "center";
     wrapper.style.zIndex = "1";
-    // 動的なものはこれだけなので、これ以外はinjectに持っていってもいいかもしれない
-    wrapper.style.paddingTop = `${240 * zoom}px`;
+    wrapper.style.paddingTop = "0";
   }
 
   private injectStyles() {
